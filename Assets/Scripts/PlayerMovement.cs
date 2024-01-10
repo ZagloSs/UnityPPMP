@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float velocidad = 20;
     private Rigidbody2D rb;
     private Vector2 direccion;
+    private Animator animator;
     public KeyCode upKey, downKey;
     
 
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start(){
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,9 +28,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(upKey))
         {
+            
             direccion = new Vector2(0, 1);
         }else if(Input.GetKey(downKey)){
-
+           
             direccion = new Vector2(0, -1);
         }
         
